@@ -7,7 +7,7 @@ The `report` class is a LaTeX template designed to provide a swift, elegant, and
 - Support and optimization for both English and Chinese languages.
 - Compatibility with `article` class options.
 - Commands for specifying report metadata like ID, project, report number.
-- Preloaded with useful packages `xeCJK`, `fontspec`, `graphicx`, `tabularx`, `booktabs`, `caption`, `pgf/tikz`, `chemfig`.
+- Preloaded with useful packages `xeCJK`, `fontspec`, `graphicx`, `tabularx`, `booktabs`, `caption`, `pgf/tikz`, `chemfig`, etc.
 - Modern formatting for titles, sections, subsections, headers, and footers.
 - Option for a plain page style that disables headers and footers (use the `swift` option).
 
@@ -43,6 +43,28 @@ fc-cache -fv
 ```
 
 On Mac and Windows, simply download the font files and double-click to install them.
+
+### Required Packages
+
+The report class relies on several LaTeX packages to provide its features. Make sure you have the following packages installed:
+
+- `xeCJK`: Provides support for typesetting Chinese text.
+- `caption`: Provides better control over captions.
+- `geometry`: Helps you set the page margins.
+- `fancyhdr`: Used for customizing headers and footers.
+- `titlesec`: Enables the customization of section titles.
+
+### Optional Packages
+
+While the above packages are required for the basic functionality of the report class, you can also consider using the following optional packages based on your specific needs:
+
+- `multicol`: For creating multi-column layouts in your reports.
+- `fontspec`: Allows you to customize fonts.
+- `graphicx`: Enables the inclusion of images.
+- `tabularx`: Enhances the tables in your reports.
+- `booktabs`: Improves the formatting of tables.
+- `pgf/tikz`: Allows for the inclusion of high-quality graphics.
+- `chemfig`: Useful for chemical structures and reactions.
 
 Ensure that your LaTeX environment includes these fonts and packages to fully utilize the features of the `report` class.
 
@@ -101,9 +123,9 @@ To help you get started with the `report` class, here's a simple example of how 
 \title{Sample Report}
 \subtitle{A Simple Example}
 \author{John Doe}
-\id{12345}
+\id{8192}
 \project{Sample Project}
-\reportnum{001}
+\reportnum{012}
 \date{\today}
 
 \begin{document}
