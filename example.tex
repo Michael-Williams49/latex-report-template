@@ -1,36 +1,89 @@
-\documentclass{report}
-\title{Sample Report}
-\subtitle{A Simple Example}
+\documentclass[]{report}
+
+\title{Investigation on Solar Cell Efficiency}
+\subtitle{Final Report}
 \author{John Doe}
-\id{12345}
-\project{Sample Project}
-\reportnum{001}
+\id{2084278}
+\project{EEE453 Photovoltaics}
+\reportnum{37}
 \date{\today}
 
-\usepackage{lipsum} % Include the lipsum package for filler text
-
 \begin{document}
-
 \maketitle
 
 \section{Introduction}
+Solar cells are devices that convert sunlight into electricity using the photovoltaic effect. Silicon is the main material used in solar cells. 
+\begin{center}
+    \chemfig[atom sep=0.9]{Si(-[2]Si)(-[4]Si)(-[6]Si)(-[0]Si)}
+\end{center}
+As shown in the figure above, silicon crystals are atomic crystals in which each silicon atom is covalently bonded to four neighboring silicon atoms to form a spatial mesh. 
 
-\lipsum[1-2] % Generates 2 paragraphs of filler text
+Improving solar cell efficiency has been an important area of research, as higher efficiencies can reduce the cost of solar electricity. It presents much significance, as is stated by a Chinese researcher: 
 
-\section{Methodology}
+\begin{quote}
+    太阳能电池的研发具有重要的经济和环境意义。它不仅可以减少对化石能源的依赖，还可以创造就业机会、促进经济增长。
 
-\lipsum[3-4] % Generates 2 paragraphs of filler text
+    如果各国政府能够采取积极的政策鼓励太阳能的商业化，我们就能更快地实现可再生能源在能源结构中的比重，推动全球向低碳可持续发展的方向迈进。这不仅对地球环境有益，也符合各国的长远利益。
+\end{quote}
 
-\subsection{Subsection}
+This report presents an investigation into various methods for enhancing the efficiency of crystalline silicon solar cells. 
 
-\lipsum[5] % Generates 1 paragraph of filler text
+\section{Experiment Setup}
+Four different silicon solar cell samples were fabricated and tested:
 
-\section{Results}
+\begin{enumerate}
+    \item Sample A - Unmodified baseline cell
+    \item Sample B - With front surface texturing
+    \item Sample C - With back surface reflector
+    \item Sample D - With both front texturing and back reflector
+\end{enumerate}
 
-\lipsum[6-7] % Generates 2 paragraphs of filler text
+The current-voltage (I-V) characteristics of each solar cell sample under AM1.5 illumination were measured to determine parameters like short circuit current, open circuit voltage, fill factor and efficiency.
+
+\subsection{Texturing}
+Front surface texturing was performed by alkaline etching of silicon to form \emph{random} pyramids of size 2-4$\mu$m. This texturing helps reduce front surface reflection and increase light trapping.
+
+\subsection{Back Surface Reflector}
+A back surface reflector (BSR) was added by depositing a 200nm layer of aluminum on the rear of solar cells C and D. The BSR reflects photons that pass through the cell back to the front for a second chance at absorption, thereby increasing current.
+
+\section{Results and Discussion}
+The equation for calculating solar cell efficiency is 
+
+\begin{equation}
+    \label{efficiency}
+    \eta = \frac{P_{max}}{P_{in}} = \frac{I_{SC}V_{OC}FF}{P_{in}}
+\end{equation}
+
+Using Equation \ref{efficiency}, the parameters extracted from I-V measurements are summarized as follows in Table \ref{parameters}. 
+
+\begin{table}[h]
+    \caption{Solar Cell Parameters}
+    \label{parameters}
+    \centering
+    \begin{tabularx}{\linewidth}{lXXXX}
+        \toprule
+        Sample & $I_{SC}$ (mA) & $V_{OC}$ (V) & FF \% & $\eta$ \% \\
+        \midrule
+        A & 28.5 & 0.58 & 75 & 12.3 \\
+        B & 32.1 & 0.59 & 75 & 13.6 \\
+        C & 30.2 & 0.61 & 78 & 14.1 \\
+        D & 35.0 & 0.61 & 78 & 16.2 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Both texturing and BSR increased the short circuit current $I_{SC}$. The enhancements are explained below:
+
+\begin{itemize}
+\item Texturing reduced front surface reflection, increasing light coupled into cell B by over 10\% relative to the flat surface cell A.
+\item The back reflector in cells C and D reflected photons back to the front, enhancing absorption and current collection.
+\item V$_{OC}$ increased slightly with BSR due to higher internal quantum efficiency.
+\item Fill factor and efficiency improvements were also observed with BSR.
+\end{itemize}
+
+The combination of front texturing and back reflector in cell D provided the highest efficiency enhancement of $\sim$32\% over the baseline cell A.
 
 \section{Conclusion}
-
-\lipsum[8-9] % Generates 2 paragraphs of filler text
+In conclusion, front surface texturing and back surface reflector incorporation were both found to improve the performance of crystalline silicon solar cells. The combined implementation of these two techniques resulted in significant efficiency enhancement. Further work can focus on optimizing surface texturing processes and exploring different back reflector materials.
 
 \end{document}
