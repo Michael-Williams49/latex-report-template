@@ -32,9 +32,9 @@ You should have a LaTeX distribution installed. There are several LaTeX distribu
 
 To use the fonts mentioned in the `report` class, make sure they are installed on your system:
 
-- `SimSong`: This font is used for the main Chinese text.
+- `Songti SC`: This font is used for the main Chinese text.
 - `Times New Roman`: This font is used for the main English text.
-- `Helvetica`: This font is used for sans-serif text.
+- `Helvetica Neue`: This font is used for sans-serif text.
 - `PingFang SC`: This font is used for Chinese sans-serif text.
 
 To install fonts on Linux, download the font files and save them to font directories such as `~/.fonts`. Then execute the following command to refresh the font cache and ensure XeLaTeX can find the font files:
@@ -94,9 +94,15 @@ Ensure that your LaTeX environment includes these fonts and packages to fully ut
     \documentclass[swift]{report}
     ```
 
-4. Write your report content in sections, subsections, and so on as you normally would.
+4. Use the 'zh-cn' option to include support for Chinese language in your document. You can also use it in combination with the 'swift' option:
+   
+    ```latex
+    \documentclass[zh-cn]{report}
+    ```
 
-5. To compile your LaTeX document using the `report` class, it is recommended to use XeLaTeX. 
+5. Write your report content in sections, subsections, and so on as you normally would.
+
+6. To compile your LaTeX document using the `report` class, it is recommended to use XeLaTeX. 
 
     ```shell
     xelatex <your-report>.tex
