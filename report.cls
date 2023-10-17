@@ -21,7 +21,6 @@
 % Include necessary packages
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{fancyhdr}
-\RequirePackage{xeCJK}
 \RequirePackage{titlesec}
 \RequirePackage{caption}
 
@@ -35,10 +34,8 @@
 \RequirePackage{graphicx}
 
 % Set fonts for main text and captions
-\setCJKmainfont{SimSong}
-\setmainfont{Times New Roman}
-\setsansfont{Helvetica}
-\setCJKsansfont{PingFang SC}
+\setmainfont{Times}
+\setsansfont{Helvetica Neue}
 \captionsetup[table]{labelsep=quad, labelfont=bf}
 \captionsetup[figure]{labelsep=quad, labelfont=bf}
 
@@ -73,6 +70,11 @@
   prefix=RP@,
 }
 \DeclareVoidOption{swift}{\pagestyle{plain}}
+\DeclareVoidOption{zh-cn}{
+    \RequirePackage{xeCJK}
+    \setCJKmainfont{Songti SC}
+    \setCJKsansfont{PingFang SC}
+}
 \ProcessKeyvalOptions*
 
 % Redefine the '\maketitle' command to customize the title
