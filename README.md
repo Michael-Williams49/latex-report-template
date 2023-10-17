@@ -10,6 +10,7 @@ The `report` class is a LaTeX template designed to provide a swift, elegant, and
 - Preloaded with useful packages `xeCJK`, `fontspec`, `graphicx`, `tabularx`, `booktabs`, `caption`, `pgf/tikz`, `chemfig`, etc.
 - Modern formatting for titles, sections, subsections, headers, and footers.
 - Option for a plain page style that disables headers and footers (use the `swift` option).
+- Option for enabling support for Chinese language (use the `zh-cn` option). 
 
 ## Installation
 
@@ -94,7 +95,7 @@ Ensure that your LaTeX environment includes these fonts and packages to fully ut
     \documentclass[swift]{report}
     ```
 
-4. Use the 'zh-cn' option to include support for Chinese language in your document. You can also use it in combination with the 'swift' option:
+4. Use the `zh-cn` option to include support for Chinese language in your document. You can also use it in combination with the `swift` option:
    
     ```latex
     \documentclass[zh-cn]{report}
