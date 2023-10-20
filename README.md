@@ -95,10 +95,10 @@ Ensure that your LaTeX environment includes these fonts and packages to fully ut
     \documentclass[swift]{report}
     ```
 
-4. Use the `zh-cn` option to include support for Chinese language in your document. You can also use it in combination with the `swift` option:
+4. By default the template only supports latin languages. Use the `zh-cn` option to include support for Chinese in your document. You can also use it in combination with the `swift` option:
    
     ```latex
-    \documentclass[zh-cn]{report}
+    \documentclass[swift,zh-cn]{report}
     ```
 
 5. Write your report content in sections, subsections, and so on as you normally would.
