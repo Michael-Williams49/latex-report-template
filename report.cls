@@ -54,9 +54,9 @@
 {
     \fancyhf{}
     \fancyhead[L]{\small\textsf\@project}
-    \fancyhead[R]{\small\textsf{\ifx\@reportnum\@void\else No.\ \@reportnum\quad\fi\@title}}
+    \fancyhead[R]{\small\textsf{\ifx\@reportnum\@void\else\textbf{No.\ \@reportnum}\quad\fi\@title}}
     \fancyfoot[C]{\small\textsf\thepage}
-    \fancyfoot[L]{\small\textsf{\@author\ifx\@id\@void\else\ |\ \@id\fi}}
+    \fancyfoot[L]{\small\textsf{\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi}}
     \fancyfoot[R]{\small\textsf\@date}
 }
 
@@ -93,7 +93,7 @@
     \end{flushleft}
     \begin{flushleft}
         \vskip -0.8em
-        \sffamily\small\@author\ifx\@id\@void\else\ | \@id\fi\par
+        \sffamily\small\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi\par
     \end{flushleft}
 \par
 }
