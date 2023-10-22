@@ -10,7 +10,8 @@ The `report` class is a LaTeX template designed to provide a swift, elegant, and
 - Preloaded with useful packages `xeCJK`, `fontspec`, `graphicx`, `tabularx`, `booktabs`, `caption`, `pgf/tikz`, `chemfig`, etc.
 - Modern formatting for titles, sections, subsections, headers, and footers.
 - Option for a plain page style that disables headers and footers (use the `swift` option).
-- Option for enabling support for Chinese language (use the `zh-cn` option). 
+- Option for enabling support for Chinese language (use the `zh-cn` option).
+- Automatic generation of PDF bookmarks. 
 
 ## Installation
 
@@ -54,6 +55,8 @@ The report class relies on several LaTeX packages to provide its features. Make 
 - `geometry`: Helps you set the page margins.
 - `fancyhdr`: Used for customizing headers and footers.
 - `titlesec`: Enables the customization of section titles.
+- `hyperref`: Remove the ugly red box around references. 
+- `bookmark`: Automatically add bookmarks to PDF file according to sections, subsections, etc. 
 
 ### Optional Packages
 
