@@ -55,7 +55,7 @@
 \fancypagestyle{fancy}
 {
     \fancyhf{}
-    \fancyhead[L]{\small\textsf\@project}
+    \fancyhead[L]{\small\textsf{\textbf\@project}}
     \fancyhead[R]{\small\textsf{\ifx\@reportnum\@void\else\textbf{No.\ \@reportnum}\quad\fi\@title}}
     \fancyfoot[C]{\small\textsf\thepage}
     \fancyfoot[L]{\small\textsf{\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi}}
