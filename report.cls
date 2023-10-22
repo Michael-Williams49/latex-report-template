@@ -82,7 +82,7 @@
     \thispagestyle{plain}
     \linespread{1.2}
     \begin{flushleft}
-        \sffamily\large\bfseries\@project\ifx\@reportnum\@void\else\quad No.\ \@reportnum\fi\par
+        \sffamily\large\bfseries\ifx\@project\@void\else\@project\quad\fi\ifx\@reportnum\@void\else No.\ \@reportnum\fi\par
     \end{flushleft}
     \begin{flushleft}
         \vskip -1em
