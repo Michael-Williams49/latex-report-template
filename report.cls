@@ -23,6 +23,8 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 \RequirePackage{caption}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[numbered]{bookmark}
 
 % Include optional packages
 \RequirePackage{multicol}
