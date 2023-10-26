@@ -52,6 +52,7 @@ The report class relies on several LaTeX packages to provide its features. Make 
 
 - `xeCJK`: Provides support for typesetting Chinese text.
 - `caption`: Provides better control over captions.
+- `subcaption`: Provides support for subfigures, subtables, and supcaptions. 
 - `geometry`: Helps you set the page margins.
 - `fancyhdr`: Used for customizing headers and footers.
 - `titlesec`: Enables the customization of section titles.
