@@ -23,6 +23,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 \RequirePackage{caption}
+\RequirePackage{subcaption}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[numbered]{bookmark}
 
@@ -40,6 +41,10 @@
 \setsansfont{Helvetica Neue}
 \captionsetup[table]{labelsep=quad, labelfont=bf}
 \captionsetup[figure]{labelsep=quad, labelfont=bf}
+\captionsetup[subfigure]{labelformat=simple}
+\captionsetup[subtable]{labelformat=simple}
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\renewcommand{\thesubtable}{\Alph{subtable}}
 
 % Customize page headers and footers using 'fancyhdr
 \renewcommand\headrulewidth{0pt}
