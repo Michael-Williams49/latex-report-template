@@ -57,7 +57,8 @@ The report class relies on several LaTeX packages to provide its features. Make 
 - `fancyhdr`: Used for customizing headers and footers.
 - `titlesec`: Enables the customization of section titles.
 - `hyperref`: Remove the ugly red box around references. 
-- `bookmark`: Automatically add bookmarks to PDF file according to sections, subsections, etc. 
+- `bookmark`: Automatically add bookmarks to PDF file according to sections, subsections, etc.
+- `mathptmx`: Use `Times New Roman` font for math expressions for better readability. 
 
 ### Optional Packages
 
@@ -70,6 +71,7 @@ While the above packages are required for the basic functionality of the report 
 - `booktabs`: Improves the formatting of tables.
 - `pgf/tikz`: Allows for the inclusion of high-quality graphics.
 - `chemfig`: Useful for chemical structures and reactions.
+- `mathtools`: Advanced support for mathematical equations and symbols.
 
 Ensure that your LaTeX environment includes these fonts and packages to fully utilize the features of the `report` class.
 
