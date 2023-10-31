@@ -11,6 +11,7 @@
 \newcommand\@reportnum{}
 \newcommand\@subtitle{}
 \newcommand\@void{}
+\newcommand\@titlelinespread{1}
 
 % Define commands for setting metadata values
 \newcommand{\id}[1]{\def\@id{#1}}
@@ -26,6 +27,7 @@
 \RequirePackage{subcaption}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[numbered]{bookmark}
+\RequirePackage{mathptmx}
 
 % Include optional packages
 \RequirePackage{multicol}
@@ -35,6 +37,7 @@
 \RequirePackage{chemfig}
 \RequirePackage{pgf/tikz}
 \RequirePackage{graphicx}
+\RequirePackage{mathtools}
 
 % Set fonts for main text and captions
 \setmainfont{Times}
@@ -47,9 +50,8 @@
 \renewcommand{\thesubtable}{\Alph{subtable}}
 
 % Customize page headers and footers using 'fancyhdr
-\renewcommand\headrulewidth{0pt}
-\renewcommand\footrulewidth{0pt}
-\linespread{1.3}
+\def\headrulewidth{0pt}
+\def\footrulewidth{0pt}
 
 % Define two page styles: 'plain' and 'fancy'
 \fancypagestyle{plain}
@@ -60,11 +62,11 @@
 \fancypagestyle{fancy}
 {
     \fancyhf{}
-    \fancyhead[L]{\small\textsf{\textbf\@project}}
-    \fancyhead[R]{\small\textsf{\ifx\@reportnum\@void\else\textbf{No.\ \@reportnum}\quad\fi\@title}}
+    \fancyhead[L]{\parbox[b]{0.5\textwidth}{\raggedright\small\textsf{\textbf\@project}}}
+    \fancyhead[R]{\parbox[b]{0.5\textwidth}{\raggedleft\small\textsf{\ifx\@reportnum\@void\else\textbf{No.\ \@reportnum}\quad\fi\@title}}}
     \fancyfoot[C]{\small\textsf\thepage}
-    \fancyfoot[L]{\small\textsf{\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi}}
-    \fancyfoot[R]{\small\textsf\@date}
+    \fancyfoot[L]{\parbox[t]{0.45\textwidth}{\raggedright\small\textsf{\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi}}}
+    \fancyfoot[R]{\parbox[t]{0.45\textwidth}{\raggedleft\small\textsf\@date}}
 }
 
 % Set the default page style to 'fancy'
@@ -79,6 +81,8 @@
 \DeclareVoidOption{swift}{\pagestyle{plain}}
 \DeclareVoidOption{zh-cn}{
     \RequirePackage{xeCJK}
+    \def\@titlelinespread{1.15}
+    \linespread{1.35}
     \setCJKmainfont{Songti SC}
     \setCJKsansfont{PingFang SC}
 }
@@ -87,15 +91,15 @@
 % Redefine the '\maketitle' command to customize the title
 \renewcommand\maketitle{
     \thispagestyle{plain}
-    \linespread{1.2}
+    \linespread{\@titlelinespread}
     \begin{flushleft}
         \sffamily\large\bfseries\ifx\@project\@void\else\@project\quad\fi\ifx\@reportnum\@void\else No.\ \@reportnum\fi\par
     \end{flushleft}
     \begin{flushleft}
-        \vskip -1em
+        \vskip -0.8em
         \sffamily\LARGE\bfseries\@title\par
         \Large\@subtitle\par
-        \vskip -0.8em
+        \vskip -0.7em
         \rule{\linewidth}{1.5pt}
     \end{flushleft}
     \begin{flushleft}
