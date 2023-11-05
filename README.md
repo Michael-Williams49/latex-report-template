@@ -72,6 +72,8 @@ While the above packages are required for the basic functionality of the report 
 - `pgf/tikz`: Allows for the inclusion of high-quality graphics.
 - `chemfig`: Useful for chemical structures and reactions.
 - `mathtools`: Advanced support for mathematical equations and symbols.
+- `apacite`: Adds support for citing in APA style.
+- `pgfplot`: Enables creating figures and plotting without external figure source. 
 
 Ensure that your LaTeX environment includes these fonts and packages to fully utilize the features of the `report` class.
 
