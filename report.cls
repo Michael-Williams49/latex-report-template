@@ -38,6 +38,9 @@
 \RequirePackage{pgf/tikz}
 \RequirePackage{graphicx}
 \RequirePackage{mathtools}
+\RequirePackage{apacite}
+\RequirePackage{pgfplotstable}
+\RequirePackage{pgfplots}
 
 % Set fonts for main text and captions
 \setmainfont{Times}
