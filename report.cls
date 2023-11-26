@@ -51,6 +51,14 @@
 \renewcommand{\thesubfigure}{\Alph{subfigure}}
 \renewcommand{\thesubtable}{\Alph{subtable}}
 
+\geometry{
+    a4paper,
+    left = 0.5 in,
+    right = 0.5 in,
+    top = 0.9 in,
+    bottom = 0.9 in
+}
+
 % Customize page headers and footers using 'fancyhdr
 \def\headrulewidth{0pt}
 \def\footrulewidth{0pt}
@@ -64,8 +72,8 @@
 \fancypagestyle{fancy}
 {
     \fancyhf{}
-    \fancyhead[L]{\parbox[b]{0.5\textwidth}{\raggedright\small\textsf{\textbf\@project}}}
-    \fancyhead[R]{\parbox[b]{0.5\textwidth}{\raggedleft\small\textsf{\ifx\@reportnum\@void\else\textbf{No.\ \@reportnum}\quad\fi\@title}}}
+    \fancyhead[L]{\parbox[b]{0.25\textwidth}{\raggedright\small\textsf{\textbf\@project}}}
+    \fancyhead[R]{\parbox[b]{0.75\textwidth}{\raggedleft\small\textsf{\ifx\@reportnum\@void\else\textbf{No.\ \@reportnum}\quad\fi\@title}}}
     \fancyfoot[C]{\small\textsf\thepage}
     \fancyfoot[L]{\parbox[t]{0.45\textwidth}{\raggedright\small\textsf{\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi}}}
     \fancyfoot[R]{\parbox[t]{0.45\textwidth}{\raggedleft\small\textsf\@date}}
