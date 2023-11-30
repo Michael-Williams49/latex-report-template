@@ -41,7 +41,7 @@
 \RequirePackage{mathtools} % Mathematical tools to use with amsmath
 \RequirePackage{apacite} % APA style citations and bibliography
 \RequirePackage{pgfplots} % Plotting graphs
-\RequirePackage{pgfplotstable}
+\RequirePackage{pgfplotstable} % Plotting regression from data points
 
 % Set fonts for main text and captions
 \setmainfont{Times} % Set main font to Times New Roman
@@ -55,7 +55,7 @@
     top = 0.9 in, % Set top margin to 0.9 inches
     bottom = 0.9 in % Set bottom margin to 0.9 inches
 }
-\renewcommand{\floatpagefraction}{.8}%
+\renewcommand{\floatpagefraction}{.8} % Independent floating objects page if floating objects occupies more than 80% of page
 
 % Define a new floating environment 'scheme'
 \newfloat{scheme}{htbp}{los}
@@ -126,6 +126,7 @@
     \begin{flushleft}
         \vskip -0.8em
         \sffamily\LARGE\bfseries\@title\par
+        \vskip 0.2em
         \Large\@subtitle\par
         \vskip -0.7em
         \rule{\linewidth}{1.5pt} % Horizontal line
