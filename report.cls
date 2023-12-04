@@ -20,7 +20,7 @@
 \newcommand{\subtitle}[1]{\def\@subtitle{#1}}
 
 % Include necessary packages
-\RequirePackage[margin=1in]{geometry} % Set page margins
+\RequirePackage[a4paper,margin=1in]{geometry} % Set page margins
 \RequirePackage{fancyhdr} % Custom headers and footers
 \RequirePackage{titlesec} % Title and section styling
 \RequirePackage{caption} % Customizing captions
@@ -49,11 +49,10 @@
 
 % Set page geometry using the 'geometry' package
 \geometry{
-    a4paper, % Set paper size to A4
-    left = 0.6 in, % Set left margin to 0.6 inches
-    right = 0.6 in, % Set right margin to 0.6 inches
-    top = 0.9 in, % Set top margin to 0.9 inches
-    bottom = 0.9 in % Set bottom margin to 0.9 inches
+    left = 0.6in, % Set left margin to 0.6 inches
+    right = 0.6in, % Set right margin to 0.6 inches
+    top = 0.9in, % Set top margin to 0.9 inches
+    bottom = 0.9in % Set bottom margin to 0.9 inches
 }
 \renewcommand{\floatpagefraction}{.8} % Independent floating objects page if floating objects occupies more than 80% of page
 
@@ -77,14 +76,12 @@
 \def\footrulewidth{0pt} % Remove footer rule
 
 % Define two page styles: 'plain' and 'fancy'
-\fancypagestyle{plain}
-{
+\fancypagestyle{plain}{
     % Plain page style without headers, only page number centered in sans-serif
     \fancyhf{}
     \fancyfoot[C]{\small\textsf\thepage}
 }
-\fancypagestyle{fancy}
-{
+\fancypagestyle{fancy}{
     % Fancy page style with customized headers and footers
     \fancyhf{}
     \fancyhead[L]{\parbox[b]{0.3\textwidth}{\raggedright\small\textsf{\textbf\@project}}}
@@ -100,11 +97,19 @@
 % Configure options using 'kvoptions'
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
-  family=rp,
-  prefix=RP@,
+    family=rp,
+    prefix=RP@,
 }
 % Define options 'swift' and 'zh-cn'
-\DeclareVoidOption{swift}{\pagestyle{plain}} % Option 'swift' changes page style to plain
+\DeclareVoidOption{swift}{
+    \geometry{
+        left = 0.6in, % Set left margin to 0.6 inches
+        right = 0.6in, % Set right margin to 0.6 inches
+        top = 0.6in, % Set top margin to 0.9 inches
+        bottom = 0.9in % Set bottom margin to 0.9 inches
+    }
+    \pagestyle{plain}
+} % Option 'swift' changes page style to plain
 \DeclareVoidOption{zh-cn}{
     % Option 'zh-cn' for Chinese document settings
     \RequirePackage{xeCJK} % Chinese typesetting support
@@ -141,50 +146,50 @@
 % Define 'abstract' environment based on document class settings
 \makeatletter
 \if@titlepage
-  % 'abstract' environment for title page
-  \renewenvironment{abstract}{
-      \titlepage
-      \null\vfil
-      \@beginparpenalty\@lowpenalty
+    % 'abstract' environment for title page
+    \renewenvironment{abstract}{
+        \titlepage
+        \null\vfil
+        \@beginparpenalty\@lowpenalty
         \paragraph{\small\textsf\abstractname}
         \@endparpenalty\@M
-      }
-     {\par\vfil\null\endtitlepage}
+    }
+    {\par\vfil\null\endtitlepage}
 \else
-  % 'abstract' environment for non-title page
-  \renewenvironment{abstract}{
-      \if@twocolumn
-        \section*{\small\textsf\abstractname}
-      \else
-        \small
-        \paragraph{\small\textsf\abstractname}
-      \fi}
-      {\if@twocolumn\else\par\fi}
+    % 'abstract' environment for non-title page
+    \renewenvironment{abstract}{
+        \if@twocolumn
+            \section*{\small\textsf\abstractname}
+        \else
+            \small
+            \paragraph{\small\textsf\abstractname}
+        \fi}
+        {\if@twocolumn\else\par\fi}
 \fi
 \makeatother
 
 % Define 'keywords' environment based on document class settings
 \makeatletter
 \if@titlepage
-  % 'keywords' environment for title page
-  \newenvironment{keywords}{
-      \titlepage
-      \null\vfil
-      \@beginparpenalty\@lowpenalty
+    % 'keywords' environment for title page
+    \newenvironment{keywords}{
+        \titlepage
+        \null\vfil
+        \@beginparpenalty\@lowpenalty
         \paragraph{\small\textsf{Keywords}}
         \@endparpenalty\@M
-      }
-     {\par\vfil\null\endtitlepage}
+    }
+    {\par\vfil\null\endtitlepage}
 \else
-  % 'keywords' environment for non-title page
-  \newenvironment{keywords}{
-      \if@twocolumn
-        \section*{\small\textsf{Keywords}}
-      \else
-        \small
-        \paragraph{\small\textsf{Keywords}}
-      \fi}
-      {\if@twocolumn\else\par\bigskip\fi}
+    % 'keywords' environment for non-title page
+    \newenvironment{keywords}{
+        \if@twocolumn
+            \section*{\small\textsf{Keywords}}
+        \else
+            \small
+            \paragraph{\small\textsf{Keywords}}
+        \fi}
+        {\if@twocolumn\else\par\bigskip\fi}
 \fi
 \makeatother
 
