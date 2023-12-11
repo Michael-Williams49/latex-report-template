@@ -129,11 +129,11 @@
     \begin{flushleft}
         \begin{leftbar}
             \sffamily\large\bfseries\ifx\@project\@void\else\@project\quad\fi\ifx\@reportnum\@void\else No.\ \@reportnum\fi\par
-            \vskip 0.2em
+            \vskip 0.1em
             \sffamily\LARGE\bfseries\@title\par
-            \vskip 0.2em
+            \vskip 0.1em
             \Large\@subtitle\par
-            \vskip -0.6em
+            \vskip -0.7em
             \rule{\linewidth}{1.5pt} % Horizontal line
             \vskip 0.1em
             \sffamily\small\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi\par
