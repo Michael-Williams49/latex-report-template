@@ -156,7 +156,7 @@
     \item\relax
     \textbf{\small\textsf{Keywords}}
     \;\small
-}{\endlist}
+}{\endlist\smallskip}
 
 % Define quote and quotation environments with a left bar
 \renewenvironment{quote}{
