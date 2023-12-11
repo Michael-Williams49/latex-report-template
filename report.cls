@@ -29,6 +29,7 @@
 \RequirePackage[numbered]{bookmark} % Numbered bookmarks
 \RequirePackage{mathptmx} % Times New Roman font for math
 \RequirePackage{float} % Improved interface for floating objects
+\RequirePackage{framed} % Support for left bars and frames
 
 % Include optional packages
 \RequirePackage{multicol} % Multiple columns
@@ -126,72 +127,59 @@
     \linespread{\@titlelinespread} % Set line spread for title
     % Title section formatting
     \begin{flushleft}
-        \sffamily\large\bfseries\ifx\@project\@void\else\@project\quad\fi\ifx\@reportnum\@void\else No.\ \@reportnum\fi\par
-    \end{flushleft}
-    \begin{flushleft}
-        \vskip -0.8em
-        \sffamily\LARGE\bfseries\@title\par
-        \vskip 0.2em
-        \Large\@subtitle\par
-        \vskip -0.7em
-        \rule{\linewidth}{1.5pt} % Horizontal line
-    \end{flushleft}
-    \begin{flushleft}
-        \vskip -0.8em
-        \sffamily\small\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi\par
+        \begin{leftbar}
+            \sffamily\large\bfseries\ifx\@project\@void\else\@project\quad\fi\ifx\@reportnum\@void\else No.\ \@reportnum\fi\par
+            \vskip 0.2em
+            \sffamily\LARGE\bfseries\@title\par
+            \vskip 0.2em
+            \Large\@subtitle\par
+            \vskip -0.6em
+            \rule{\linewidth}{1.5pt} % Horizontal line
+            \vskip 0.1em
+            \sffamily\small\textbf{\@author}\ifx\@id\@void\else\ \textbf{|}\ \@id\fi\par
+        \end{leftbar}
     \end{flushleft}
 \par
 }
 
-% Define 'abstract' environment based on document class settings
-\makeatletter
-\if@titlepage
-    % 'abstract' environment for title page
-    \renewenvironment{abstract}{
-        \titlepage
-        \null\vfil
-        \@beginparpenalty\@lowpenalty
-        \paragraph{\small\textsf\abstractname}
-        \@endparpenalty\@M
-    }
-    {\par\vfil\null\endtitlepage}
-\else
-    % 'abstract' environment for non-title page
-    \renewenvironment{abstract}{
-        \if@twocolumn
-            \section*{\small\textsf\abstractname}
-        \else
-            \small
-            \paragraph{\small\textsf\abstractname}
-        \fi}
-        {\if@twocolumn\else\par\fi}
-\fi
-\makeatother
+% Define 'abstract' environment
+\renewenvironment{abstract}{
+    \list{}{\leftmargin=1em \rightmargin=1em}
+    \item\relax
+    \textbf{\small\textsf\abstractname}
+    \;\small
+}{\endlist}
 
-% Define 'keywords' environment based on document class settings
-\makeatletter
-\if@titlepage
-    % 'keywords' environment for title page
-    \newenvironment{keywords}{
-        \titlepage
-        \null\vfil
-        \@beginparpenalty\@lowpenalty
-        \paragraph{\small\textsf{Keywords}}
-        \@endparpenalty\@M
-    }
-    {\par\vfil\null\endtitlepage}
-\else
-    % 'keywords' environment for non-title page
-    \newenvironment{keywords}{
-        \if@twocolumn
-            \section*{\small\textsf{Keywords}}
-        \else
-            \small
-            \paragraph{\small\textsf{Keywords}}
-        \fi}
-        {\if@twocolumn\else\par\bigskip\fi}
-\fi
-\makeatother
+% Define 'keywords' environment
+\newenvironment{keywords}{
+    \list{}{\leftmargin=1em \rightmargin=1em}
+    \item\relax
+    \textbf{\small\textsf{Keywords}}
+    \;\small
+}{\endlist}
+
+% Define quote and quotation environments with a left bar
+\renewenvironment{quote}{
+    \list{}{\leftmargin=0.5em \rightmargin=1.5em}
+    \begin{leftbar}
+    \item\relax
+}{
+    \end{leftbar}
+    \endlist
+}
+
+\renewenvironment{quotation}{
+    \list{}{
+        \listparindent 1.5em
+        \itemindent \listparindent
+        \leftmargin=0.5em \rightmargin=1.5em
+        \parsep 1em}
+    \begin{leftbar}
+    \item\relax
+}{
+    \end{leftbar}
+    \endlist
+}
 
 % Customize the appearance of section and subsection titles using 'titlesec'
 \titleformat{\section}
