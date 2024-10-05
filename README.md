@@ -61,6 +61,8 @@ The report class relies on several LaTeX packages to provide its features. Make 
 - `bookmark`: Automatically add bookmarks to PDF file according to sections, subsections, etc.
 - `mathptmx`: Use `Times New Roman` font for math expressions for better readability. 
 - `float`: Defines a new float environment `scheme`.
+- `framed`: Support for left bars and frames.
+- `enumitem`: Enhance support for enumeration labels.
 
 ### Optional Packages
 
@@ -74,8 +76,10 @@ While the above packages are required for the basic functionality of the report 
 - `pgf/tikz`: Allows for the inclusion of high-quality graphics.
 - `chemfig`: Useful for chemical structures and reactions.
 - `mathtools`: Advanced support for mathematical equations and symbols.
-- `apacite`: Support citation and references. 
+- `apacite`: Support citation and references.
 - `pgfplots`: Enable plotting within latex file.
+- `listings`: Support for code highlighting.
+- `tcolorbox`: Enable frame for code blocks.
 
 Ensure that your LaTeX environment includes these fonts and packages to fully utilize the features of the `report` class.
 
@@ -133,9 +137,24 @@ Ensure that your LaTeX environment includes these fonts and packages to fully ut
         \label{sch:oxidation}
     \end{scheme*}
     ```
-7. Write your report content in sections, subsections, and so on as you normally would.
 
-8. Add in-text citations and end references using `apacite`:
+7. To insert a code block, use the `code` environment. This will create a boxed code block with shaded background. You can specify the language in the first option, and a title for the code block in the second option. If you do not wish to add a title, leave it blank:
+
+    ```latex
+    \begin{code}[Python]{Poisson Distribution}
+    import math
+    def poisson(l, k):
+        return math.exp(-l) * l**k / math.factorial(k)
+    result = 0
+    for i in range(40):
+        result += poisson(30, i)
+    print(1 - result)
+    \end{code}
+    ```
+
+8. Write your report content in sections, subsections, and so on as you normally would.
+
+9. Add in-text citations and end references using `apacite`:
 
     ```latex
     <Your text> \cite{<key to bibliography>}.
@@ -148,7 +167,7 @@ Ensure that your LaTeX environment includes these fonts and packages to fully ut
     \bibliography{<Your bibliography file>.bib}
     ```
 
-9.  To compile your LaTeX document using the `report` class, it is recommended to use XeLaTeX. 
+10.  To compile your LaTeX document using the `report` class, it is recommended to use XeLaTeX. Please remove any auxillary files before compilation.
 
     ```shell
     xelatex <your-report>.tex
