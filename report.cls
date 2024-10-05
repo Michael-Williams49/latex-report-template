@@ -30,6 +30,7 @@
 \RequirePackage{mathptmx} % Times New Roman font for math
 \RequirePackage{float} % Improved interface for floating objects
 \RequirePackage{framed} % Support for left bars and frames
+\RequirePackage{enumitem} % Enhance support for enumeration labels
 
 % Include optional packages
 \RequirePackage{multicol} % Multiple columns
@@ -43,10 +44,29 @@
 \RequirePackage{apacite} % APA style citations and bibliography
 \RequirePackage{pgfplots} % Plotting graphs
 \RequirePackage{pgfplotstable} % Plotting regression from data points
+\RequirePackage{listings} % Support for code block
+\RequirePackage[most]{tcolorbox}
 
 % Set fonts for main text and captions
 \setmainfont{Times} % Set main font to Times New Roman
 \setsansfont{Helvetica Neue} % Set sans-serif font
+\setmonofont{Menlo} % Set monospace font
+
+% Configure code block style
+\tcbuselibrary{listings}
+\newtcblisting{code}[2][]{ % Add optional argument
+    enhanced,
+    boxrule=1pt, 
+    colback=gray!5,
+    title={#2},
+    listing only,
+    listing options={
+        language=#1, % Use the optional argument for language
+        breaklines=true, 
+        breakatwhitespace=true,
+        basicstyle=\ttfamily\small
+    }
+}
 
 % Set page geometry using the 'geometry' package
 \geometry{
