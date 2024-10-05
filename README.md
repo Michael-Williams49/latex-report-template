@@ -39,6 +39,7 @@ To use the fonts mentioned in the `report` class, make sure they are installed o
 - `Times New Roman`: This font is used for the main English text.
 - `Helvetica Neue`: This font is used for sans-serif text.
 - `PingFang SC`: This font is used for Chinese sans-serif text.
+- `Menlo`: This font is used for monospace text including code blocks.
 
 To install fonts on Linux, download the font files and save them to font directories such as `~/.fonts`. Then execute the following command to refresh the font cache and ensure XeLaTeX can find the font files:
 ```shell
